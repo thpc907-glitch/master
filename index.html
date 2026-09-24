@@ -309,8 +309,8 @@ function sendWhatsApp(){
  const address=document.getElementById('address').value.trim();
  let total=0;
  let lines=cart.map(c=>{const p=products.find(x=>x.id===c.id);total+=p.price*c.qty;return `• ${c.qty}x ${p.name} — ${money(p.price*c.qty)}`});
- let msg=`Olá, Master Dog's! 🍔🔥%0A%0AQuero fazer este pedido:%0A${lines.join('%0A')}%0A%0A💰 *Total: ${money(total)}*%0A👤 Nome: ${name}%0A📦 Forma: ${receive}`;
- if(receive==='Entrega') msg+=`%0A📍 Endereço: ${address || 'vou informar pelo WhatsApp'}`;
+ let msg=`Olá, Master Dog's!%0A%0AQuero fazer este pedido:%0A${lines.join('%0A')}%0A%0A *Total: ${money(total)}*%0A Nome: ${name}%0A Forma: ${receive}`;
+ if(receive==='Entrega') msg+=`%0A Endereço: ${address || 'vou informar pelo WhatsApp'}`;
  msg+=`%0A%0AConfirmam o pedido e o prazo, por favor?`;
  window.open(`https://wa.me/5542998597955?text=${msg}`,'_blank');
 }
